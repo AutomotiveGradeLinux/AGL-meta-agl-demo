@@ -1,0 +1,8 @@
+# Associate all input devices with the first display
+#
+# NOTE: Can be more selective with something like:
+# SUBSYSTEM=="input", ATTRS{idVendor}=="*", ATTRS{idProduct}=="004a", OWNER="agl-driver", ENV{ID_SEAT}="seat0", ENV{WL_OUTPUT}="HDMI-A-1"
+# or
+# SUBSYSTEM=="input", KERNEL=="event*", DEVPATH=="/devices/platform/soc/e65d8000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-4/1-4.2/1-4.2.3/*", ENV{WL_OUTPUT}="DP-1"
+#
+SUBSYSTEM=="input", ENV{ID_SEAT}="seat0", ENV{WL_OUTPUT}="DP-1"

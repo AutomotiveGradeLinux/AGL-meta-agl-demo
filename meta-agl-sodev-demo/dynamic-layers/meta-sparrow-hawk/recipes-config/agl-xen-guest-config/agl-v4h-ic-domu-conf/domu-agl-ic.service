@@ -1,0 +1,13 @@
+[Unit]
+Description=DomAGL-IC
+Requires=backend-ready@bridge.service backend-ready@compositor-up.service
+After=backend-ready@bridge.service backend-ready@compositor-up.service
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/xen/bin/launch-domain DomAGL-IC /etc/xen/domu-agl-ic.cfg
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
